@@ -1,0 +1,266 @@
+/* Reset basico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #f9f9fb;
+  --color-primary: #6a5acd;
+  --color-secondary: #00bfff;
+  --color-text: #333;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+
+}
+
+/* Barra de navegacion */
+header {
+  background: linear-gradient(90deg, var(--color-primary));
+  padding: 15px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Secciones */
+main section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Sobre mi */
+.perfil {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  clip-path: polygon(
+    50% 0%, 93% 25%, 93% 75%, 
+    50% 100%, 7% 75%, 7% 25%
+  );
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Proyectos */
+#proyectos h2 {
+  text-align: center;
+  
+}
+
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-proyectos article {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.grid-proyectos img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;  
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .grid-proyectos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contacto */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-grid label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 5px rgba(106,90,205,0.3);
+}
+
+.form-grid .full-width {
+  grid-column: span 2;
+}
+
+.form-grid .radios {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.form-grid .radios span {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.form-grid .radios label {
+  font-weight: normal;
+  margin-right: 15px;
+}
+
+.form-grid input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.form-grid input[type="radio"]:checked {
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(106,90,205,0.3);
+}
+
+
+.form-grid input[type="radio"]:hover {
+  border-color: var(--color-secondary);
+}
+
+
+.form-grid button {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-grid button:hover {
+  background: var(--color-secondary);
+}
+
+/*- - - seccion de referencias - - -*/
+#referencias {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#referencias h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-primary);
+}
+
+#referencias blockquote {
+  background: #fff;
+  border-left: 5px solid var(--color-primary);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-style: italic;
+  color: #444;
+}
+
+#referencias blockquote footer {
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--color-secondary);
+  text-align: right;
+  font-style: normal; /* evita que se vea en cursiva */
+  opacity: 0.8;       /* más suave que el texto principal */
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+/*- - - botones de js - - -*/
+#btnTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* oculto por defecto */
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#btnTop:hover {
+  background: var(--color-secondary);
+}
+
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}

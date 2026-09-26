@@ -9,115 +9,157 @@
         <header>
             <nav>
                 <ul>
-                    <li> <a href="#inicio">Inicio </a></li>
-                    <li> <a href="#sobre-mi">Sobre mi </a></li>
-                    <li> <a href="#proyectos">Proyectos </a></li>
-                    <li> <a href="#contacto">Contactos</a></li>
-                    <li> <a href="#referencias"> Referecias/Calificaciones</a> </li>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mi</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#referencias">Referencias</a></li>
                 </ul>
             </nav>
         </header>
-        
         <main>
             <section id="inicio">
-                <h1> Julian Leal. </h1>
-                <h3> Licenciado en ciencias de la computacion. </h3>
-                <p>Bienvenido a mi portafolios web... </p>
-                <p>Aqui encontraras informacion sobre mi y mis proyectos. </p>
+                <img src="img/perfil auxiliar.png" alt="foto de perfil" class="perfil">
+                <h1>Julian Leal</h1>
+                <cite>Licenciado en ciencias de la computación</cite>
+                <p>¡Bienvenido a mi portafolios web!</p>
             </section>
 
             <section id="sobre-mi">
-                <h2> Sobre mi.</h2>
-                <p>Soy estudiante de Ingeniería de Sistemas con interés en programación web y desarrollo de software.</p>
-                <p>Me apasiona aprender nuevas tecnologías y aplicar mis conocimientos en proyectos prácticos.</p>
-                <h3>Mis habilidades</h3>
-                <ul>
-                    <li>Programación en C y Python</li>
-                    <li>Conceptos de OOP y UML</li>
-                    <li>Desarrollo web con HTML, CSS y JavaScript</li>
-                    <li>Gestión de proyectos académicos</li>
-                </ul>
+                <h2>Sobre mi</h2>
+                <p>Soy estudiante de Licenciatura en Ciencias de la Computación en la Universidad Nacional de San Juan (UNSJ), actualmente enfocado en desarrollar mis habilidades como programador.</p>
+                <p>Mi objetivo principal es convertirme en un Desarrollador Backend especializado en Java y Spring Boot, mientras continúo fortaleciendo mis conocimientos en desarrollo de software, bases de datos y ciencias de la computación.</p>
                 <blockquote>
                     "La inteligencia es la habilidad de evitar hacer trabajo y conseguir que el trabajo se haga." - Linus Torvalds
                 </blockquote>
+                <br>
+                <h3>Mis habilidades:</h3>
+                <ul>
+                    <li>Conceptos de OOP y UML</li>
+                    <li>Desarrollo web</li>
+                    <li>Gestión de proyectos académicos</li>
+                </ul>
+                <h3>Tecnologias:</h3>
+                <ul>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>Html</li>
+                    <li>Css</li>
+                    <li>JavaScript</li>
+                </ul>
             </section>
 
             <section id="proyectos">
-                <h2> Proyectos </h2>
-                <article>
-                    <h3>Portfolio Web</h3>
-                    <p>Proyecto personal de portfolio con HTML, CSS y JavaScript.</p>
-                    <img src="img/portfolio_image.png" alt="Imagen del proyecto 1">
-                    <a href="https://github.com/Juky-byte/Portfolio.git" target="_blank">Ver en GitHub</a>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </article>
-                <article>
-                    <h3>ETI - Evaluacion de trabajos de investigación</h3>
-                    <p>Proyecto escolar desarrollado en Python aplicando conceptos de POO y UML.</p>
-                    <img src="img/ETI_proyecto_image.png" alt="Imagen del proyecto 2">
-                    <a href="https://github.com/Juky-byte/Practico2-poo" target="_blank">Ver en GitHub</a>
-                    <ul>
-                        <li>Python</li>
-                        <li>POO</li>
-                        <li>UML</li>
-                    </ul>
-                </article>
+                <h2>Proyectos</h2>
+                <div class="grid-proyectos">
+                    <article>
+                        <h3>Portfolio Web</h3>
+                        <p>Proyecto personal de portfolio con HTML, CSS y JavaScript.</p>
+                        <img src="img/portfolio_image.png" alt="portfolio Julian Leal">
+                        <a href="https://github.com/Juky-byte/Portfolio.git" target="_blank">Ver en GitHub</a>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </article>
+                    
+                    <article>
+                        <h3>ETI - Evaluación de trabajos de investigación</h3>
+                        <p>Proyecto escolar desarrollado en Python aplicando conceptos de POO</p>
+                        <img src="img/ETI_proyecto_image.png" alt="proyecto de evaluacion de trabajos">
+                        <a href="https://github.com/Juky-byte/Practico2-poo" target="_blank">Ver en GitHub</a>
+                        <ul>
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>About me</h3>
+                        <p>Presentación personal de GitHub en formato MD</p>
+                        <img src="img/presentacion_image.jpg" alt="presentacion de GitHub">
+                        <a href="https://github.com/Juky-byte" target="_blank">Ver en GitHub</a>
+                        <ul>
+                            <li>Markdown</li>
+                        </ul>
+                    </article>
+                </div>
             </section>
 
-            <section id="contactos">
-                 <h2>Contactos</h2>
-                 <ul>
-                    <li> <a href="https://github.com/Juky-byte" target="_blank">Github</a></li>
-                    <li> <a href="https://www.linkedin.com/in/julián-leal-ba2029285/" target="_blank">Linkedln</a></li>
-                 </ul>
-                  <form action="#" method="post">
-                    <fieldset>
-                        <h3> informacion personal</h3>
+            <section id="contacto">
+                <h2>Contacto</h2>
 
-                        <label for="nombre">Nombre</label>
+                <form action="#" method="post" class="form-grid">
+                    <div>
+                        <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
+                    </div>
 
-                        <label for="apellido">Apellido</label>
+                    <div>
+                        <label for="apellido">Apellido:</label>
                         <input type="text" id="apellido" name="apellido" required>
+                    </div>
 
-                        <label for="email">Correo electronico</label>
-                        <input type="email" id="email" name="email" required placeholder="correoejemplo@gmail.com">
+                    <div>
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
 
-                        <label for="telefono">Telefono</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="">
-                    </fieldset>
-                    <fieldset>
-                        <h3>Consulta.</h3>
+                    <div class="full-width">
                         <label for="asunto">Asunto:</label>
                         <input type="text" id="asunto" name="asunto" required>
+                    </div>
 
+                    <div class="full-width">
                         <label for="mensaje">Mensaje:</label>
-                        <input type="text" id="mensaje" name="mensaje" required>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <div class="full-width radios">
+                        <span>Preferencia de contacto:</span>
+                        <label><input type="radio" name="preferencia" value="email" required> Email</label>
+                        <label><input type="radio" name="preferencia" value="telefono"> Teléfono</label>
+                        <label><input type="radio" name="preferencia" value="whatsapp"> WhatsApp</label>
+                    </div>
 
-                    </fieldset>
-                    <fieldset>
-                        <h3>Preferencias de contacto.</h3>
-                        <label><input type="radio" name="preferencia" value="email">Email</label>
-                        <label><input type="radio" name="preferencia" value="telefono">Telefono</label>
-                        <label><input type="radio" name="preferencia" value="whatsapp">Whatsapp</label>
-                    </fieldset>
-                    <button type="submit">Enviar</button>
-                  </form>
+                    <div class="full-width">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
             </section>
+
             <section id="referencias">
                 <h2>Referencias / Calificaciones</h2>
                 <blockquote>
+                    "Julian obtuvo un promedio de 10 en la asignatura Programación Procedural, demostrando excelencia académica y dominio de conceptos fundamentales."
+                    <footer>— Calificación académica</footer>
+                </blockquote>
+
+                <blockquote>
+                    "Su desempeño en proyectos prácticos reflejó gran capacidad de análisis y aplicación de estructuras de datos."
+                    <footer>— Profesor de Programación</footer>
+                </blockquote>
+
+                <blockquote>
+                    "Destaco su compromiso y dedicación en el área de desarrollo de software, siempre buscando mejorar y aprender nuevas tecnologías."
+                    <footer>— Tutor académico</footer>
                 </blockquote>
             </section>
+
         </main>
         <footer>
             <p>Autor: Julian</p>
             <p>Correo: julianleal@gmail.com </p>
             <p>&copy; 2026</p>
         </footer>
+        <button id="btnTop">Volver al inicio</button>
+        <script src="scripts.js"></script>
     </body>
 </html>
