@@ -1,165 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Portfolio Personal </title>
+        <title>Portfolio Personal</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
     </head>
     <body>
+        <!-- Poligonos flotantes del fondo -->
+        <div class="bg-polygon-container">
+            <div class="polygon poly-1"></div>
+            <div class="polygon poly-2"></div>
+            <div class="polygon poly-3"></div>
+        </div>
+        <!----------------------------------->
+        <!-- Barra de navegacion -->
         <header>
-            <nav>
-                <ul>
+            <nav class="navbar">
+                <div class="logo">PORTFOLIO</div>
+                <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sobre-mi">Sobre mi</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
                     <li><a href="#referencias">Referencias</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
+                <button id="theme-toggle" class="btn-theme" aria-label="Cambiar Tema">🌙</button>
             </nav>
         </header>
         <main>
-            <section id="inicio">
-                <img src="img/perfil auxiliar.png" alt="foto de perfil" class="perfil">
-                <h1>Julian Leal</h1>
-                <cite>Licenciado en ciencias de la computación</cite>
-                <p>¡Bienvenido a mi portafolios web!</p>
+            <!-- Secciones -->
+            <!-- Seccion de inicio -->
+            <section id="inicio" class="section hero-section">
+                <div class="container hero-container">
+                    <div class="hero-text">
+                        <h1>[Julian Leal]</h1>
+                        <h2>Estudiante de Ciencias de la Computación / Desarrollador Backend</h2>
+                        <p>
+                            Te doy la bienvenida a mi portfolio web personal. Este sitio fue desarrollado como trabajo práctico para la materia Programación Web, con el objetivo de integrar conceptos fundamentales de maquetación semántica, estilos responsivos e interactividad dinámicas.
+                        </p>
+                        <p>
+                            Aquí podrás explorar los proyectos que he realizado a lo largo de la cursada, conocer las tecnologías y herramientas que utilizo diariamente, y encontrar diferentes vías para ponerte en contacto conmigo.
+                        </p>
+                    </div>
+                    <div class="hero-img-wrapper">
+                        <img src="img/perfil auxiliar.png" alt="imagen representativa" class="poly-clip hero-img">
+                    </div>
+                </div>
             </section>
 
-            <section id="sobre-mi">
-                <h2>Sobre mi</h2>
-                <p>Soy estudiante de Licenciatura en Ciencias de la Computación en la Universidad Nacional de San Juan (UNSJ), actualmente enfocado en desarrollar mis habilidades como programador.</p>
-                <p>Mi objetivo principal es convertirme en un Desarrollador Backend especializado en Java y Spring Boot, mientras continúo fortaleciendo mis conocimientos en desarrollo de software, bases de datos y ciencias de la computación.</p>
-                <blockquote>
-                    "La inteligencia es la habilidad de evitar hacer trabajo y conseguir que el trabajo se haga." - Linus Torvalds
-                </blockquote>
-                <br>
-                <h3>Mis habilidades:</h3>
-                <ul>
-                    <li>Conceptos de OOP y UML</li>
-                    <li>Desarrollo web</li>
-                    <li>Gestión de proyectos académicos</li>
-                </ul>
-                <h3>Tecnologias:</h3>
-                <ul>
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>Html</li>
-                    <li>Css</li>
-                    <li>JavaScript</li>
-                </ul>
-            </section>
+            <!-- Seccion Sobre mi -->
+            <section id="sobre-mi" class="section">
+                <h2>Sobre mí</h2>
+                
+                <div class="about-container">
+                    <!-- teexto -->
+                    <div class="about-text">
+                        <p>Soy estudiante de Licenciatura en Ciencias de la Computación en la Universidad Nacional de San Juan (UNSJ), actualmente enfocado en desarrollar mis habilidades como programador.</p>
+                        <p>Mi objetivo principal es convertirme en un Desarrollador Backend especializado en Java y Spring Boot, mientras continúo fortaleciendo mis conocimientos en desarrollo de software, bases de datos y ciencias de la computación.</p>
+                        
+                        <blockquote class="poly-quote">
+                            "La inteligencia es la habilidad de evitar hacer trabajo y conseguir que el trabajo se haga." -Linus Torvals.
+                        </blockquote>
+                    </div>
 
-            <section id="proyectos">
-                <h2>Proyectos</h2>
-                <div class="grid-proyectos">
-                    <article>
-                        <h3>Portfolio Web</h3>
-                        <p>Proyecto personal de portfolio con HTML, CSS y JavaScript.</p>
-                        <img src="img/portfolio_image.png" alt="portfolio Julian Leal">
-                        <a href="https://github.com/Juky-byte/Portfolio.git" target="_blank">Ver en GitHub</a>
+                    <!-- imagen -->
+                    <div class="about-img-wrapper">
+                        <img src="img/perfil auxiliar.png" alt="Foto sobre mí" class="perfil">
+                    </div>
+                </div>
+
+                <!-- habilidades y tecnologias debajo -->
+                <div class="skills-wrapper">
+                    <div class="skills-box">
+                        <h3>Mis habilidades</h3>
                         <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
+                            <li>Conceptos de OOP y UML</li>
+                            <li>Desarrollo web</li>
+                            <li>Gestión de proyectos académicos</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-box">
+                        <h3>Tecnologías</h3>
+                        <ul>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C</li>
+                            <li>HTML5 & CSS3</li>
                             <li>JavaScript</li>
                         </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Seccion de proyectos -->
+            <section id="proyectos" class="section">
+                <h2>Proyectos</h2>
+                <div class="grid-proyectos">
+                    <article class="card-proyecto">
+                        <img src="img/portfolio_image.png" alt="portfolio Julian Leal">
+                        <div class="card-body">
+                            <h3>Portfolio Web <span class="indicador-despliegue">▾</span></h3>
+                            <p>Proyecto personal de portfolio desarrollado para la materia Programación Web, enfocado en diseño moderno e interactividad.</p>
+                            
+                            <div class="proyecto-detalle oculto">
+                                <p><strong>Contexto y desafíos:</strong> El objetivo fue integrar maquetación semántica, variables CSS para temas dinámicos y algoritmos de manipulación del DOM en JS sin depender de librerías externas.</p>
+                                <p><strong>Características clave:</strong></p>
+                                <ul>
+                                    <li>Fondo poligonal animado con keyframes CSS.</li>
+                                    <li>Soporte nativo para modo claro y oscuro.</li>
+                                    <li>Navegación fluida y componentes responsive.</li>
+                                </ul>
+                                 <a href="https://github.com/Juky-byte/Portfolio.git" target="_blank" class="btn-link">GitHub ↗</a>
+                            </div>
+
+                            <ul class="tech-tags">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
                     </article>
                     
-                    <article>
-                        <h3>ETI - Evaluación de trabajos de investigación</h3>
-                        <p>Proyecto escolar desarrollado en Python aplicando conceptos de POO</p>
-                        <img src="img/ETI_proyecto_image.png" alt="proyecto de evaluacion de trabajos">
-                        <a href="https://github.com/Juky-byte/Practico2-poo" target="_blank">Ver en GitHub</a>
-                        <ul>
-                            <li>Python</li>
-                            <li>Flask</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                        </ul>
+                    <article class="card-proyecto">
+                        <img src="img/eti-app-web.jpg" alt="proyecto de evaluacion de trabajos">
+                        <div class="card-body">
+                            <h3>ETI - Evaluación de Trabajos de Investigación <span class="indicador-despliegue">▾</span></h3>
+                            <p>Sistema académico para la gestión y evaluación de trabajos de investigación desarrollado en Python.</p>
+                            
+                            <div class="proyecto-detalle oculto">
+                                <p><strong>Contexto y desafíos:</strong> Modelado de un dominio complejo aplicando arquitectura orientada a objetos (POO) y almacenamiento persistente.</p>
+                                <p><strong>Características clave:</strong></p>
+                                <ul>
+                                    <li>Asignación de evaluadores por área temática.</li>
+                                    <li>Cálculo de puntajes ponderados y reportes.</li>
+                                    <li>Interfaz web liviana conectada a backend Python.</li>
+                                </ul>
+                                <a href="https://github.com/Juky-byte/Practico2-poo" target="_blank" class="btn-link">GitHub ↗</a>
+                            </div>
+
+                            <ul class="tech-tags">
+                                <li>Python</li>
+                                <li>Flask</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
                     </article>
 
-                    <article>
-                        <h3>About me</h3>
-                        <p>Presentación personal de GitHub en formato MD</p>
-                        <img src="img/presentacion_image.jpg" alt="presentacion de GitHub">
-                        <a href="https://github.com/Juky-byte" target="_blank">Ver en GitHub</a>
-                        <ul>
-                            <li>Markdown</li>
-                        </ul>
+                    <article class="card-proyecto">
+                        <img src="img/markdown-presentations-cover.webp" alt="presentacion de GitHub">
+                        <div class="card-body">
+                            <h3>About me <span class="indicador-despliegue">▾</span></h3>
+                            <p>Presentación personal de GitHub en formato MD</p>
+                            
+                            <div class="proyecto-detalle oculto">
+                                <p><strong>Contexto y desafíos:</strong> Optimización de la presencia digital técnica organizando repositorios, tecnologías utilizadas y flujos de trabajo.</p>
+                                <p><strong>Características clave:</strong></p>
+                                <ul>
+                                    <li>Uso de badges dinámicos y estadísticas.</li>
+                                    <li>Estructura clara para reclutadores y colegas.</li>
+                                </ul>
+                                <a href="https://github.com/Juky-byte" target="_blank" class="btn-link">GitHub ↗</a>
+                            </div>
+
+                            <ul class="tech-tags">
+                                <li>Markdown</li>
+                                <li>Git</li>
+                            </ul>
+                        </div>
                     </article>
                 </div>
             </section>
 
-            <section id="contacto">
-                <h2>Contacto</h2>
+            <!-- Seccion de referencias y testimonios -->
+            <section id="referencias" class="section">
+                <h2>Referencias y Calificaciones</h2>
 
-                <form action="#" method="post" class="form-grid">
-                    <div>
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
+                <div class="referencias-grid">
+                    <blockquote class="card-referencia">
+                        <p>"Julián demostró un promedio sobresaliente en Programación Procedural, destacándose por su lógica de resolución de problemas y rigor técnico."</p>
+                        <footer>— Cátedra de Programación Procedural (UNSJ)</footer>
+                    </blockquote>
 
-                    <div>
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" required>
-                    </div>
+                    <blockquote class="card-referencia">
+                        <p>"Excelente desempeño en proyectos prácticos grupales, demostrando iniciativa, compromiso y un gran dominio de estructuras de datos."</p>
+                        <footer>— Docente de Ciencias de la Computación</footer>
+                    </blockquote>
 
-                    <div>
-                        <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" id="telefono" name="telefono">
-                    </div>
-
-                    <div class="full-width">
-                        <label for="asunto">Asunto:</label>
-                        <input type="text" id="asunto" name="asunto" required>
-                    </div>
-
-                    <div class="full-width">
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-                    </div>
-                    <div class="full-width radios">
-                        <span>Preferencia de contacto:</span>
-                        <label><input type="radio" name="preferencia" value="email" required> Email</label>
-                        <label><input type="radio" name="preferencia" value="telefono"> Teléfono</label>
-                        <label><input type="radio" name="preferencia" value="whatsapp"> WhatsApp</label>
-                    </div>
-
-                    <div class="full-width">
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
+                    <blockquote class="card-referencia">
+                        <p>"Capacidad analítica constante y orientación a la mejora continua en la maquetación y desarrollo de software."</p>
+                        <footer>— Tutor Académico</footer>
+                    </blockquote>
+                </div>
             </section>
+            <!-- Seccion de contacto -->
+            <section id="contacto" class="section">
+                <div class="contacto-header">
+                    <h2>Contacto</h2>
+                    <div class="contacto-links">
+                        <a href="https://github.com/Juky-byte" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
 
-            <section id="referencias">
-                <h2>Referencias / Calificaciones</h2>
-                <blockquote>
-                    "Julian obtuvo un promedio de 10 en la asignatura Programación Procedural, demostrando excelencia académica y dominio de conceptos fundamentales."
-                    <footer>— Calificación académica</footer>
-                </blockquote>
+                <div class="form-card-wrapper">
+                    <form action="#" method="post" class="form-contacto">
+                        <!-- Datos Personales -->
+                        <fieldset>
+                            <legend>Datos Personales</legend>
+                            <div class="form-grid-2">
+                                <div>
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                <div>
+                                    <label for="apellido">Apellido:</label>
+                                    <input type="text" id="apellido" name="apellido" required>
+                                </div>
+                                <div>
+                                    <label for="email">Correo electrónico:</label>
+                                    <input type="email" id="email" name="email" required placeholder="nombre@ejemplo.com">
+                                </div>
+                                <div>
+                                    <label for="telefono">Teléfono:</label>
+                                    <input type="tel" id="telefono" name="telefono" placeholder="+54 9 264 ...">
+                                </div>
+                            </div>
+                        </fieldset>
 
-                <blockquote>
-                    "Su desempeño en proyectos prácticos reflejó gran capacidad de análisis y aplicación de estructuras de datos."
-                    <footer>— Profesor de Programación</footer>
-                </blockquote>
+                        <!-- Mensaje / Consulta -->
+                        <fieldset>
+                            <legend>Tu Consulta</legend>
+                            <div class="form-group">
+                                <label for="asunto">Asunto:</label>
+                                <input type="text" id="asunto" name="asunto" required placeholder="Motivo de contacto">
+                            </div>
 
-                <blockquote>
-                    "Destaco su compromiso y dedicación en el área de desarrollo de software, siempre buscando mejorar y aprender nuevas tecnologías."
-                    <footer>— Tutor académico</footer>
-                </blockquote>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje:</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribí tu mensaje aquí..."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Preferencia de contacto-->
+                        <fieldset>
+                            <legend>Preferencia de Contacto</legend>
+                            <div class="radios-group">
+                                <label><input type="radio" name="preferencia" value="email" checked> Email</label>
+                                <label><input type="radio" name="preferencia" value="telefono"> Teléfono</label>
+                                <label><input type="radio" name="preferencia" value="whatsapp"> WhatsApp</label>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="btn-poly btn-poly-submit">Enviar mensaje</button>
+                    </form>
+                </div>
             </section>
 
         </main>
-        <footer>
-            <p>Autor: Julian</p>
-            <p>Correo: julianleal@gmail.com </p>
-            <p>&copy; 2026</p>
+
+        <!-- Pie de pagina -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p><strong>Autor:</strong> Julián Leal</p>
+                <p>Universidad Nacional de San Juan — Programación Web</p>
+                <p class="copyright">&copy; 2026 Todos los derechos reservados.</p>
+            </div>
         </footer>
-        <button id="btnTop">Volver al inicio</button>
-        <script src="scripts.js"></script>
+
+        <!-- Boton de volver al incio -->
+        <button id="btnTop" title="Volver al inicio" aria-label="Volver arriba">↑</button>
     </body>
 </html>

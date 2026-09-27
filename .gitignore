@@ -6,3 +6,6 @@
 
 # Configuración de IDEs
 .vscode/
+
+# Notas y demas
+*.txt
