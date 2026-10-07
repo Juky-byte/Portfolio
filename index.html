@@ -44,7 +44,7 @@
                         </p>
                     </div>
                     <div class="hero-img-wrapper">
-                        <img src="img/perfil auxiliar.png" alt="imagen representativa" class="poly-clip hero-img">
+                        <img src="img/perfil-auxiliar.png" alt="imagen representativa" class="poly-clip hero-img">
                     </div>
                 </div>
             </section>
@@ -60,13 +60,14 @@
                         <p>Mi objetivo principal es convertirme en un Desarrollador Backend especializado en Java y Spring Boot, mientras continúo fortaleciendo mis conocimientos en desarrollo de software, bases de datos y ciencias de la computación.</p>
                         
                         <blockquote class="poly-quote">
-                            "La inteligencia es la habilidad de evitar hacer trabajo y conseguir que el trabajo se haga." -Linus Torvals.
+                            "La inteligencia es la habilidad de evitar hacer trabajo y conseguir que el trabajo se haga." <cite>-Linus Torvals</cite>
                         </blockquote>
                     </div>
 
                     <!-- imagen -->
                     <div class="about-img-wrapper">
-                        <img src="img/perfil auxiliar.png" alt="Foto sobre mí" class="perfil">
+                        <!-- easter egg con contador de clicks-->
+                        <img id="easter-egg" src="img/perfil-auxiliar.png" alt="Foto sobre mí" class="perfil">
                     </div>
                 </div>
 
@@ -98,7 +99,7 @@
                 <h2>Proyectos</h2>
                 <div class="grid-proyectos">
                     <article class="card-proyecto">
-                        <img src="img/portfolio_image.png" alt="portfolio Julian Leal">
+                        <img src="img/portfolio-image.png" alt="portfolio Julian Leal">
                         <div class="card-body">
                             <h3>Portfolio Web <span class="indicador-despliegue">▾</span></h3>
                             <p>Proyecto personal de portfolio desarrollado para la materia Programación Web, enfocado en diseño moderno e interactividad.</p>
@@ -149,7 +150,7 @@
                     </article>
 
                     <article class="card-proyecto">
-                        <img src="img/markdown-presentations-cover.webp" alt="presentacion de GitHub">
+                        <img src="img/markdown-icon.webp" alt="presentacion de GitHub">
                         <div class="card-body">
                             <h3>About me <span class="indicador-despliegue">▾</span></h3>
                             <p>Presentación personal de GitHub en formato MD</p>
@@ -265,11 +266,12 @@
             <div class="footer-content">
                 <p><strong>Autor:</strong> Julián Leal</p>
                 <p>Universidad Nacional de San Juan — Programación Web</p>
-                <p class="copyright">&copy; 2026 Todos los derechos reservados.</p>
+                <p>&copy; <span id="current-year"></span> Todos los derechos reservados.</p>
+                <!-- el año actual cambia con la funcion  -->
             </div>
         </footer>
 
         <!-- Boton de volver al incio -->
-        <button id="btnTop" title="Volver al inicio" aria-label="Volver arriba">↑</button>
+        <button id="btn-top" title="Volver al inicio" aria-label="Volver arriba">↑</button>
     </body>
 </html>

@@ -282,7 +282,7 @@ header {
   font-size: 1.15rem;
   margin-bottom: 1.2rem;
   color: var(--text-color);
-  text-align: left !important;
+  text-align: left;
 }
 
 .hero-text p {
@@ -322,7 +322,7 @@ header {
 }
 
 /* ==========================================================================
-   7. SECCIÓN SOBRE MÍ
+   7. SECCIÓN SOBRE MÍ (about)
    ========================================================================== */
 #sobre-mi p {
   margin-bottom: 1rem;
@@ -358,6 +358,7 @@ header {
   );
   box-shadow: 0 8px 20px var(--shadow);
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .perfil:hover {
@@ -426,6 +427,7 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  align-items: start;
 }
 
 .card-proyecto {
@@ -439,6 +441,12 @@ header {
   flex-direction: column;
   cursor: pointer;
   user-select: none;
+}
+
+.card-proyecto h3 {
+  min-height: 3.2rem; 
+  display: flex;
+  align-items: center;
 }
 
 .card-proyecto:hover {
@@ -471,6 +479,11 @@ header {
   color: var(--text-color);
   margin-bottom: 1rem;
   opacity: 0.9;
+}
+
+.card-proyecto.activa {
+  align-self: start;
+  height: auto;
 }
 
 .indicador-despliegue {
@@ -803,13 +816,14 @@ header {
   color: var(--text-color);
 }
 
-.footer-content .copyright {
+.footer-content .right {
   opacity: 0.7;
   font-size: 0.8rem;
   margin-top: 0.5rem;
 }
 
-#btnTop {
+/* BONTON VOLVER ARRIBA */
+#btn-top {
   position: fixed;
   bottom: 25px;
   right: 25px;
@@ -829,12 +843,12 @@ header {
   z-index: 99;
 }
 
-#btnTop.visible {
+#btn-top.visible {
   opacity: 1;
   pointer-events: auto;
 }
 
-#btnTop:hover {
+#btn-top:hover {
   background: var(--primary-light);
   transform: scale(1.1);
 }
