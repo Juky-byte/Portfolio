@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
     if (btnTheme) {
         btnTheme.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode")
+
+            // cambiar el icono segun el modo
+            if (document.body.classList.contains("dark-mode")) {
+                btnTheme.textContent = "☀️";
+            } else {
+                btnTheme.textContent = "🌙";
+            }
         });
     }
 
