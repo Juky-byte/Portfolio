@@ -160,5 +160,48 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
                 }
             });
     }
-    
+
+    // ==========================================================================
+    // FORMULARIO DE CONTACTO.
+    // ==========================================================================
+    const formContacto = document.getElementById("form-contacto");
+    const formEstado = document.getElementById("form-estado");
+    const btnEnviar = document.getElementById("btn-enviar");
+
+    if (formContacto) {
+        formContacto.addEventListener("submit", function(e) {
+            e.preventDefault() // evita que se recargue la pagina por error
+
+            // feedback visual
+            formEstado.textContent = "Enviando mensaje...";
+            formEstado.className = "form-estado-mensaje";
+            btnEnviar.disabled = true;
+
+            const datosFormulario = new FormData(formContacto);
+
+            fetch("https://formspree.io/f/xgaoalqy", {
+                method: "POST",
+                body: datosFormulario,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then((respuesta) => {
+                if (respuesta.ok) {
+                    formEstado.textContent = "¡Mensaje enviado con exito!";
+                    formEstado.classList.add("exito");
+                    formContacto.reset(); // limpia los campos
+                } else {
+                    throw new Error("Respuesta invalida del servidor");
+                }
+            })
+            .catch((error) => {
+                formEstado.textContent ="Hubo un problema al enviar el mensaje. Intentalo nuevamente."
+                formEstado.classList.add("error")
+            })
+            .finally(() => {
+                btnEnviar.disabled = false; // reactivar el boton
+            });
+        });
+    }
 }); // cierre del DOMContentLoaded
