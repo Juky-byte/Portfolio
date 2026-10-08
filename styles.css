@@ -104,7 +104,8 @@ h1, h2, h3, .logo {
 #sobre-mi h2,
 #proyectos h2,
 #contacto h2,
-#referencias h2 {
+#referencias h2,
+#api-section h2 {
   text-align: left; 
   font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
@@ -852,6 +853,37 @@ header {
   background: var(--primary-light);
   transform: scale(1.1);
 }
+/* ==========================================================================
+   RECURSOS DE LA API
+   ========================================================================== */
+.card-nasa {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.nasa-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.nasa-explicacion {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.error-mensaje {
+  color: #ff5555;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
 
 /* ==========================================================================
    12. MEDIA QUERIES (RESPONSIVIDAD)

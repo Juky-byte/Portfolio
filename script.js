@@ -97,4 +97,68 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
         yearSpan.textContent = new Date().getFullYear();
     }
 
+    // ==========================================================================
+    // CONSUMO DE SERVICIOS WEB (API REST)
+    // ==========================================================================
+    const btnApod = document.getElementById("btn-cargar-apod");
+    const apodContenido = document.getElementById("apod-contenido");
+    const apodError = document.getElementById("apod-error");
+
+    if (btnApod) {
+        btnApod.addEventListener("click", obtenerDatoNasa);
+    }
+
+    function obtenerDatoNasa() {
+        apodError.textContent = "";
+        apodContenido.innerHTML = "<p class='cargando'> Cargando la imagen del dia desde la NASA...</p> ";
+
+        // timeout de 5 segundos.
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => {
+            controller.abort();
+        }, 5000);
+        
+        // peticion HTTP
+        fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY", {signal: controller.signal})
+            .then((respuesta) => {
+                // responde a tiempo
+                clearTimeout(timeoutId);
+                if (!respuesta.ok) {
+                    throw new Error("Error en el sevidor de la NASA:" + respuesta.status)
+                }
+                // convertimos el json
+                return respuesta.json();
+            })
+            .then((datos)=>{
+                let recursoMedia;
+                
+                // verificamos si es una imagen o un video.
+                if (datos.media_type === 'image') {
+                recursoMedia = `<img src="${datos.url}" alt="${datos.title}" class="nasa-img">`;
+                } else {
+                recursoMedia = `<iframe src="${datos.url}" frameborder="0" allowfullscreen class="nasa-video"></iframe>`;
+                }
+
+                // inyecta el contenido en el HTML
+                apodContenido.innerHTML = `
+                    <article class="card-nasa">
+                        <h3>${datos.title}</h3>
+                        <p class="nasa-fecha"><strong>Fecha:</strong> ${datos.date}</p>
+                        <div class="nasa-media">
+                            ${recursoMedia}
+                        </div>
+                        <p class="nasa-explicacion">${datos.explanation}</p>
+                    </article>
+                `;
+            })
+            .catch((error) => {
+                apodContenido.innerHTML = ""
+                if (error.name === "AbortError") {
+                apodError.textContent = "La conexion con el servidor de la NASA tardo demasiado tiempo";
+                } else {
+                    apodContenido.textContent = "No se pudo obtener la foto/video del dia";
+                }
+            });
+    }
+    
 }); // cierre del DOMContentLoaded
