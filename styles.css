@@ -756,6 +756,28 @@ header {
   margin-top: 0.5rem;
 }
 
+/* mensaje de estado del formulario */
+.form-estado-mensaje {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.form-estado-mensaje.exito {
+  color: #4ece8a; 
+}
+
+.form-estado-mensaje.error {
+  color: #ff5555; 
+}
+
+.btn-poly:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* ==========================================================================
    11. BOTONES Y FOOTER
    ========================================================================== */

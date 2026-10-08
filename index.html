@@ -206,14 +206,14 @@
                 </div>
 
                 <div class="form-card-wrapper">
-                    <form action="#" method="post" class="form-contacto">
+                    <form id="form-contacto" action="https://formspree.io/f/xgaoalqy" method="POST" class="form-contacto">
                         <!-- Datos Personales -->
                         <fieldset>
                             <legend>Datos Personales</legend>
                             <div class="form-grid-2">
                                 <div>
                                     <label for="nombre">Nombre:</label>
-                                    <input type="text" id="nombre" name="nombre" required>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                                 </div>
                                 <div>
                                     <label for="apellido">Apellido:</label>
@@ -248,13 +248,24 @@
                         <fieldset>
                             <legend>Preferencia de Contacto</legend>
                             <div class="radios-group">
-                                <label><input type="radio" name="preferencia" value="email" checked> Email</label>
-                                <label><input type="radio" name="preferencia" value="telefono"> Teléfono</label>
-                                <label><input type="radio" name="preferencia" value="whatsapp"> WhatsApp</label>
+                                <label>
+                                    <input type="radio" name="preferencia" value="email" checked> 
+                                    Email
+                                </label>
+                                <label>
+                                    <input type="radio" name="preferencia" value="telefono"> 
+                                    Teléfono
+                                </label>
+                                <label>
+                                    <input type="radio" name="preferencia" value="whatsapp"> 
+                                    WhatsApp
+                                </label>
                             </div>
                         </fieldset>
-
-                        <button type="submit" class="btn-poly btn-poly-submit">Enviar mensaje</button>
+                        <!-- enviar el formulario -->
+                        <button type="submit" id="btn-enviar" class="btn-poly btn-poly-submit">Enviar mensaje</button>
+                        <!-- feedback de la API-->
+                        <p id="form-estado" class="form-estado-mensaje"></p>
                     </form>
                 </div>
             </section>
