@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
     if (btnTheme) {
         btnTheme.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode")
+
+            // cambiar el icono segun el modo
+            if (document.body.classList.contains("dark-mode")) {
+                btnTheme.textContent = "☀️";
+            } else {
+                btnTheme.textContent = "🌙";
+            }
         });
     }
 
@@ -112,6 +119,9 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
         apodError.textContent = "";
         apodContenido.innerHTML = "<p class='cargando'> Cargando la imagen del dia desde la NASA...</p> ";
 
+        // desabilitar el boton
+        if (btnApod) btnApod.disabled = true;
+
         // timeout de 5 segundos.
         const controller = new AbortController();
         const timeoutId = setTimeout(() => {
@@ -119,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
         }, 5000);
         
         // peticion HTTP
-        fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY", {signal: controller.signal})
+        fetch("https://api.nasa.gov/planetary/apod?api_key=OCDTB9zWO9qQkEa1spIXJFtd7batZvyGsuKS3Fl6", {signal: controller.signal})
             .then((respuesta) => {
                 // responde a tiempo
                 clearTimeout(timeoutId);
@@ -154,10 +164,16 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
             .catch((error) => {
                 apodContenido.innerHTML = ""
                 if (error.name === "AbortError") {
-                apodError.textContent = "La conexion con el servidor de la NASA tardo demasiado tiempo";
+                    apodError.textContent = "La conexion con el servidor de la NASA tardo demasiado tiempo";
                 } else {
                     apodContenido.textContent = "No se pudo obtener la foto/video del dia";
                 }
+            })
+            .finally(() => {
+                // reinicia el timeout
+                clearTimeout(timeoutId);
+                // activa el boton nuevamente
+                if (btnApod) btnApod.disabled = false;
             });
     }
 
@@ -196,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
                 }
             })
             .catch((error) => {
+                console.log(Error);
                 formEstado.textContent ="Hubo un problema al enviar el mensaje. Intentalo nuevamente."
                 formEstado.classList.add("error")
             })
