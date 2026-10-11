@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Portfolio Personal</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="img/portfolio-icon.png">
         <script src="script.js" defer></script>
     </head>
     <body>
@@ -79,17 +80,20 @@
                             <li>Conceptos de OOP y UML</li>
                             <li>Desarrollo web</li>
                             <li>Gestión de proyectos académicos</li>
+                            <li>Curiosidad y aprendizaje continuo</li>
+                            <li>Comunicación efectiva</li>
                         </ul>
                     </div>
 
                     <div class="skills-box">
                         <h3>Tecnologías</h3>
                         <ul>
-                            <li>Java</li>
-                            <li>Python</li>
-                            <li>C</li>
-                            <li>HTML5 & CSS3</li>
-                            <li>JavaScript</li>
+                            <li><img src="img/java.svg" alt="Java" class="tech-icon">Java</li>
+                            <li><img src="img/python.svg" alt="Python" class="tech-icon">Python</li>
+                            <li><img src="img/c.svg" alt="C" class="tech-icon">C</li>
+                            <li><img src="img/html-5.svg" alt="HTML5" class="tech-icon">HTML5</li>
+                            <li><img src="img/css-3.svg" alt="CSS" class="tech-icon">CSS3</li>
+                            <li><img src="img/javascript.svg" alt="JavaScript" class="tech-icon">JavaScript</li>
                         </ul>
                     </div>
                 </div>
@@ -193,16 +197,47 @@
                         <p>"Capacidad analítica constante y orientación a la mejora continua en la maquetación y desarrollo de software."</p>
                         <footer>— Tutor Académico</footer>
                     </blockquote>
+
+                    <!-- referencias ocultas -->
+                     <div id="referencias-extra" class="referencias-ocultas">
+                        <blockquote class="card-referencia">
+                            <p>"Muy buena predisposición para trabajar en equipo y aportar ideas."</p>
+                            <footer>- Ana Torres, Desarrolladora Fullstack</footer>
+                        </blockquote>
+
+                        <blockquote class="card-referencia">
+                            <p>Demostró un manejo impecable de APIs y buenas prácticas."</p>
+                            <footer>- Carlos Ruiz, Docente</footer>
+                        </blockquote>
+
+                        <blockquote class="card-referencia">
+                            <p>"Excelente profesional, muy metódico y cumplidor con los tiempos."</p>
+                            <footer>- Juan Pérez, Líder Técnico</footer>
+                        </blockquote>
+                    </div>
                 </div>
+                <button id="btn-ver-mas" class="btn-poly">Ver más</button>
             </section>
             <!-- Seccion de contacto -->
             <section id="contacto" class="section">
                 <div class="contacto-header">
                     <h2>Contacto</h2>
-                    <p><strong>mis redes de trabajo:</strong></p>
                     <div class="contacto-links">
-                        <a href="https://github.com/Juky-byte" target="_blank">GitHub</a>
-                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+
+                        <a href="https://github.com/Juky-byte" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="img/github-icon.svg" alt="GitHub" class="social-icon">
+                            <span>GitHub</span>
+                        </a>
+
+                        <a href="https://linkedin.com" target="_blank">
+                            <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon">
+                            <span>LinkedIn</span>
+                        </a>
+                        
+                        <a href="mailto:julianleal306@gmail.com" target="_blank" class="social-link">
+                            <img src="img/email.svg" alt="Email" class="social-icon">
+                            <span>Email</span>
+                        </a>
                     </div>
                 </div>
 
@@ -271,15 +306,15 @@
                 </div>
             </section>
             <!-- seccion de la API-->
-            <section id="nasa-apod-section" class="section">
-                <h2>Dato del dia</h2>
-                <button id="btn-cargar-apod" class="btn-poly">Cargar dato</button>
+            <section id="api-section" class="section">
+                <h2>Mascotitas</h2>
+                <button id="btn-cargar-dato" class="btn-poly">Cargar dato</button>
 
-                <div id="apod-contenido">
+                <div id="api-contenido">
                     <!-- contenido inyectable -->
                 </div>
 
-                <p id="apod-error" class="error-mensaje"></p>
+                <p id="api-error" class="error-mensaje"></p>
             </section>
 
         </main>
