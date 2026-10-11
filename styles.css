@@ -403,6 +403,7 @@ header {
   padding: 0;
 }
 
+/* Estilo general para los ítems de lista */
 .skills-box li {
   padding: 0.4rem 0;
   border-bottom: 1px dashed var(--border-color);
@@ -411,15 +412,23 @@ header {
   align-items: center;
 }
 
-.skills-box li::before {
+.skills-box li:last-child {
+  border-bottom: none;
+}
+
+/* las viñetas se aplican SOLO a la caja Mis habilidades */
+.skills-box:first-child li::before {
   content: "▹";
   color: var(--primary);
   font-weight: bold;
   margin-right: 8px;
 }
 
-.skills-box li:last-child {
-  border-bottom: none;
+.tech-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 10px; /* Espacio entre el icono y el texto del lenguaje */
 }
 
 /* ==========================================================================
@@ -630,20 +639,32 @@ header {
 
 .contacto-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-top: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .contacto-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--primary-light);
   font-weight: 600;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3 ease;
 }
 
 .contacto-links a:hover {
+  transform: translateY(-2px);
   color: var(--accent);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .form-card-wrapper {
@@ -712,6 +733,10 @@ header {
 }
 
 /* Inputs y Textareas con tinte lila suave */
+#mensaje {
+  resize: none;
+}
+
 .form-contacto input[type="text"],
 .form-contacto input[type="email"],
 .form-contacto input[type="tel"],
