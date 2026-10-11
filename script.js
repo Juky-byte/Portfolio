@@ -1,8 +1,8 @@
 
-document.addEventListener("DOMContentLoaded", () => { // esperamos que el html cargue por completo.
+document.addEventListener("DOMContentLoaded", () => { // espera que el html cargue por completo.
 
     // ==========================================================================
-    // (bonus) MODO CLARO / OSCURO (falta el local storage)
+    // (bonus) MODO CLARO / OSCURO 
     // ==========================================================================
     const btnTheme = document.getElementById("theme-toggle");
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
     if (easterEgg) {
         easterEgg.addEventListener("click", () => {
             clickCont++;
-
+            console.log(clickCont);
             if (clickCont === 10) {
                 alert("¡Encontraste el Easter Egg del portafolio!");
                 clickCont = 0;
@@ -94,6 +94,25 @@ document.addEventListener("DOMContentLoaded", () => { // esperamos que el html c
         }
     });
     });
+
+    // ==========================================================================
+    //  BOTON VER MAS REFERENCIAS
+    // ==========================================================================
+    const btnVerMas = document.getElementById("btn-ver-mas");
+    const referenciasExtra = document.getElementById("referencias-extra");
+
+    if (btnVerMas && referenciasExtra) {
+        btnVerMas.addEventListener("click", () => {
+            referenciasExtra.classList.toggle("mostrar");
+
+            if (referenciasExtra.classList.contains("mostrar")) {
+                btnVerMas.textContent = "Ver menos";
+            } else {
+                btnVerMas.textContent = "Ver más";
+            }
+        });
+    }
+
 
     // ==========================================================================
     //  CAMBIAR EL AÑO AUTOMATICAMENTE

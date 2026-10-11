@@ -597,6 +597,24 @@ header {
   padding-top: 0.5rem;
 }
 
+/* referencias ocultas*/
+.referencias-ocultas {
+  display: none; 
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.referencias-ocultas.mostrar {
+  display: contents;
+  opacity: 1;
+}
+
+#btn-ver-mas {
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+
 /* ==========================================================================
    SECCIÓN CONTACTO
    ========================================================================== */
