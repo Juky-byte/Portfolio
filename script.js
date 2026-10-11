@@ -54,11 +54,10 @@ document.addEventListener("DOMContentLoaded", () => { // espera que el html carg
             if (clickCont === 10) {
                 alert("¡Encontraste el Easter Egg del portafolio!");
                 clickCont = 0;
+                easterEgg.src = "img/meme.webp";
             }
         });
     }
-
-
 
     // ==========================================================================
     //  DESPLIEGUE INTERACTIVO DE TARJETAS DE PROYECTOS
@@ -67,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => { // espera que el html carg
 
     tarjetasProyectos.forEach((tarjeta) => {
     tarjeta.addEventListener("click", (e) => {
-        // Si hace clic en el enlace a GitHub o Demo, no desplegar
+        // Si hace clic en el enlace a GitHub, no desplegar
         if (e.target.tagName.toLowerCase() === 'a') return;
 
         const detalle = tarjeta.querySelector(".proyecto-detalle");
