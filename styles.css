@@ -897,7 +897,7 @@ header {
 /* ==========================================================================
    RECURSOS DE LA API
    ========================================================================== */
-.card-nasa {
+.card-cat {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   padding: 1.5rem;
@@ -905,7 +905,7 @@ header {
   margin-top: 1rem;
 }
 
-.nasa-img {
+.cat-img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
@@ -913,7 +913,7 @@ header {
   margin: 1rem 0;
 }
 
-.nasa-explicacion {
+.cat-explicacion {
   font-size: 0.95rem;
   line-height: 1.6;
   opacity: 0.9;

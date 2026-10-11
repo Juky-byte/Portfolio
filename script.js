@@ -126,20 +126,20 @@ document.addEventListener("DOMContentLoaded", () => { // espera que el html carg
     // ==========================================================================
     // CONSUMO DE SERVICIOS WEB (API REST)
     // ==========================================================================
-    const btnApod = document.getElementById("btn-cargar-apod");
-    const apodContenido = document.getElementById("apod-contenido");
-    const apodError = document.getElementById("apod-error");
+    const btnDato = document.getElementById("btn-cargar-dato");
+    const apiContenido = document.getElementById("api-contenido");
+    const apiError = document.getElementById("api-error");
 
-    if (btnApod) {
-        btnApod.addEventListener("click", obtenerDatoNasa);
+    if (btnDato) {
+        btnDato.addEventListener("click", obtenerDatoGato);
     }
 
-    function obtenerDatoNasa() {
-        apodError.textContent = "";
-        apodContenido.innerHTML = "<p class='cargando'> Cargando la imagen del dia desde la NASA...</p> ";
+    function obtenerDatoGato() {
+        apiError.textContent = "";
+        apiContenido.innerHTML = "<p class='cargando'>Buscando un gatito...</p>";
 
         // desabilitar el boton
-        if (btnApod) btnApod.disabled = true;
+        if (btnDato) btnDato.disabled = true;
 
         // timeout de 5 segundos.
         const controller = new AbortController();
@@ -148,51 +148,56 @@ document.addEventListener("DOMContentLoaded", () => { // espera que el html carg
         }, 5000);
         
         // peticion HTTP
-        fetch("https://api.nasa.gov/planetary/apod?api_key=OCDTB9zWO9qQkEa1spIXJFtd7batZvyGsuKS3Fl6", {signal: controller.signal})
+        fetch("https://api.thecatapi.com/v1/images/search?has_breeds=1", {signal: controller.signal})
             .then((respuesta) => {
                 // responde a tiempo
                 clearTimeout(timeoutId);
                 if (!respuesta.ok) {
-                    throw new Error("Error en el sevidor de la NASA:" + respuesta.status)
+                    throw new Error("Error en el sevidor The Cat API:" + respuesta.status)
                 }
                 // convertimos el json
+                console.log(respuesta)
                 return respuesta.json();
             })
-            .then((datos)=>{
-                let recursoMedia;
+            .then((datos) => {
+                // The Cat API devuelve un array con un objeto adentro
+                const gato = datos[0];
+                const imagenUrl = gato.url;
                 
-                // verificamos si es una imagen o un video.
-                if (datos.media_type === 'image') {
-                recursoMedia = `<img src="${datos.url}" alt="${datos.title}" class="nasa-img">`;
-                } else {
-                recursoMedia = `<iframe src="${datos.url}" frameborder="0" allowfullscreen class="nasa-video"></iframe>`;
+                // Extraemos info de la raza si está disponible
+                let nombreRaza = "Gatito tierno";
+                let descripcionRaza = "Una adorable mascota lista para alegrar tu día.";
+                
+                if (gato.breeds && gato.breeds.length > 0) {
+                    nombreRaza = gato.breeds[0].name;
+                    descripcionRaza = gato.breeds[0].description;
                 }
 
                 // inyecta el contenido en el HTML
-                apodContenido.innerHTML = `
-                    <article class="card-nasa">
-                        <h3>${datos.title}</h3>
-                        <p class="nasa-fecha"><strong>Fecha:</strong> ${datos.date}</p>
-                        <div class="nasa-media">
-                            ${recursoMedia}
+                apiContenido.innerHTML = `
+                    <article class="card-cat">
+                        <h3>${nombreRaza}</h3>
+                        <div class="cat-media">
+                            <img src="${imagenUrl}" alt="${nombreRaza}" class="cat-img">
                         </div>
-                        <p class="nasa-explicacion">${datos.explanation}</p>
+                        <p class="cat-explicacion">${descripcionRaza}</p>
                     </article>
                 `;
             })
             .catch((error) => {
-                apodContenido.innerHTML = ""
+                console.log(error);
+                apiContenido.innerHTML = ""
                 if (error.name === "AbortError") {
-                    apodError.textContent = "La conexion con el servidor de la NASA tardo demasiado tiempo";
+                    apiError.textContent = "La conexion con el servidor tardo demasiado tiempo";
                 } else {
-                    apodContenido.textContent = "No se pudo obtener la foto/video del dia";
+                    apiContenido.textContent = "No se pudo obtener el gato";
                 }
             })
             .finally(() => {
                 // reinicia el timeout
                 clearTimeout(timeoutId);
                 // activa el boton nuevamente
-                if (btnApod) btnApod.disabled = false;
+                if (btnDato) btnDato.disabled = false;
             });
     }
 
