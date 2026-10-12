@@ -22,13 +22,6 @@
   font-style: normal;
 }
 
-  @font-face {
-    font-family: "Poppins";
-    src: url("fonts/Poppins-Italic.ttf") format('truetype');
-    font-weight: 400;
-    font-style: italic;
-  }
-
 @font-face {
   font-family: "Orbitron";
   src: url("fonts/Orbitron-Bold.ttf") format('truetype');
@@ -954,30 +947,144 @@ header {
 /* ==========================================================================
    MEDIA QUERIES (RESPONSIVIDAD)
    ========================================================================== */
-@media (max-width: 900px) {
-  .hero-container,
-  .about-container {
+@media (max-width: 768px) {
+  .section {
+  padding: 3rem 1rem;
+  }
+
+  .section h2,
+  #sobre-mi h2,
+  #proyectos h2,
+  #contacto h2,
+  #referencias h2,
+  #api-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Barra de navegacion adaptada para celulares */
+  .navbar {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .grid-proyectos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .grid-proyectos,
-  .form-grid-2 {
-    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .nav-links {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 1rem;
+  }
+
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    padding: 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .hero-img-wrapper {
+    width: 100%;
+  }
+
+  .hero-img {
+    max-width: 240px;
+  }
+
+  .about-container {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .poly-quote {
+    border-left: none;
+    border-top: 4px solid var(--primary);
+    padding-left: 0;
+    padding-top: 1rem;
+    text-align: left;
+  }
+
+  .skills-wrapper {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .skills-box {
+    min-width: 100%;
+  }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
     gap: 1rem;
-    font-size: 0.85rem;
   }
 
   .form-card-wrapper {
     padding: 1.5rem 1rem;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+  }
+
+  .radios-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .contacto-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  #btn-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.85rem;
   }
 }
