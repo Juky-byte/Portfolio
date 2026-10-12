@@ -22,12 +22,12 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("fonts/Poppins-Italic.ttf") format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
+  @font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins-Italic.ttf") format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }
 
 @font-face {
   font-family: "Orbitron";
@@ -653,7 +653,7 @@ header {
   font-weight: 600;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.3s ease, transform 0.3 ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .contacto-links a:hover {
