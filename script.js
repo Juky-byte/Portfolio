@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => { // espera que el html carg
                 }
             })
             .catch((error) => {
-                console.log(Error);
+                console.log(error);
                 formEstado.textContent ="Hubo un problema al enviar el mensaje. Intentalo nuevamente."
                 formEstado.classList.add("error")
             })
